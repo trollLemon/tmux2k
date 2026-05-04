@@ -31,3 +31,25 @@ get_pane_dir() {
     done
     echo "${ret%?}"
 }
+
+get_pywal_colors() {
+    local colors_file="$HOME/.cache/wal/colors"
+    local colors=()
+    if [[ -f "$colors_file" ]]; then
+        while IFS= read -r line; do
+            colors+=("$line")
+        done <"$colors_file"
+    fi
+    local n=${#colors[@]}
+    if [[ $n -eq 0 ]]; then
+        return
+    fi
+    # Output 24 colors; for indices beyond available colors, wrap from index 1
+    for i in $(seq 0 23); do
+        if [[ $i -lt $n ]]; then
+            echo "${colors[$i]}"
+        else
+            echo "${colors[$(( (i - n) % (n - 1) + 1 ))]}"
+        fi
+    done
+}

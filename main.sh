@@ -227,6 +227,33 @@ set_theme() {
         yellow=$(get_tmux_option "@tmux2k-light-yellow" "$duo_fg")
         dark_yellow=$(get_tmux_option "@tmux2k-dark-yellow" "$duo_fg")
         ;;
+    "pywal")
+        pywal_colors=($(get_pywal_colors))
+        black=$(get_tmux_option "@tmux2k-black" "${pywal_colors[0]}")
+        gray=$(get_tmux_option "@tmux2k-gray" "${pywal_colors[1]}")
+        white=$(get_tmux_option "@tmux2k-white" "${pywal_colors[2]}")
+        light_blue=$(get_tmux_option "@tmux2k-light-blue" "${pywal_colors[3]}")
+        blue=$(get_tmux_option "@tmux2k-blue" "${pywal_colors[4]}")
+        dark_blue=$(get_tmux_option "@tmux2k-dark-blue" "${pywal_colors[5]}")
+        light_green=$(get_tmux_option "@tmux2k-light-green" "${pywal_colors[6]}")
+        green=$(get_tmux_option "@tmux2k-green" "${pywal_colors[7]}")
+        dark_green=$(get_tmux_option "@tmux2k-dark-green" "${pywal_colors[8]}")
+        light_orange=$(get_tmux_option "@tmux2k-light-orange" "${pywal_colors[9]}")
+        orange=$(get_tmux_option "@tmux2k-yellow" "${pywal_colors[10]}")
+        dark_orange=$(get_tmux_option "@tmux2k-dark-orange" "${pywal_colors[11]}")
+        light_pink=$(get_tmux_option "@tmux2k-light-pink" "${pywal_colors[12]}")
+        pink=$(get_tmux_option "@tmux2k-light-purple" "${pywal_colors[13]}")
+        dark_pink=$(get_tmux_option "@tmux2k-dark-pink" "${pywal_colors[14]}")
+        light_purple=$(get_tmux_option "@tmux2k-light-purple" "${pywal_colors[15]}")
+        purple=$(get_tmux_option "@tmux2k-purple" "${pywal_colors[16]}")
+        dark_purple=$(get_tmux_option "@tmux2k-dark-purple" "${pywal_colors[17]}")
+        light_red=$(get_tmux_option "@tmux2k-light-red" "${pywal_colors[18]}")
+        red=$(get_tmux_option "@tmux2k-red" "${pywal_colors[19]}")
+        dark_red=$(get_tmux2k_option "@tmux2k-dark-red" "${pywal_colors[20]}")
+        light_yellow=$(get_tmux_option "@tmux2k-light-yellow" "${pywal_colors[21]}")
+        yellow=$(get_tmux_option "@tmux2k-light-yellow" "${pywal_colors[22]}")
+        dark_yellow=$(get_tmux_option "@tmux2k-dark-yellow" "${pywal_colors[23]}")
+        ;;
     esac
 
     if $icons_only; then
